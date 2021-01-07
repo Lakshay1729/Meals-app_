@@ -10,6 +10,7 @@ class MealItem extends StatelessWidget {
   final Complexity complexity;
   final Affordability affordability;
 
+
   MealItem(
       {Key key,
       @required this.title,
@@ -54,7 +55,11 @@ class MealItem extends StatelessWidget {
 
   void selectMeal(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(MealDetailScreen.routeName,
-        arguments: id);
+        arguments: id).then((value)  {
+          if(value!=null){
+            // removeItem(value);
+          }
+        });
   }
 
   @override
